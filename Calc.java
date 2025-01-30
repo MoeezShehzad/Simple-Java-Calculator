@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 class Calculator {
     Scanner scan = new Scanner(System.in);
-    int a, b;
+    int a;
+    int b;
 
     public Calculator(int a, int b) {
         this.a = a;
@@ -21,14 +22,19 @@ class Calculator {
         return a * b;
     }
 
-    public int div() {
-        return a / b;
+    public int div(){
+        if(b==0){
+            System.out.println("Cannot divide by zero, Syntax Error");
+            return 0;
+        }else{
+            return a/b;
+        }
     }
 
     public void getVal() {
-        System.out.print("Enter 1st number;");
+        System.out.print("Enter 1st number: ");
         a = scan.nextInt();
-        System.out.print("Enter 2nd number:");
+        System.out.print("Enter 2nd number: ");
         b = scan.nextInt();
     }
 }
@@ -42,7 +48,7 @@ public class Calc {
         boolean keepRunning = true;
         
        while(keepRunning){ 
-        System.out.println("Welcom to Calculator");
+        System.out.println("\nWelcom to Calculator");
         System.out.println("**************");
         System.out.println("Enter choice \n1.Addition \n2.Subtrraction \n3.Multiplication \n4.Division \n5.Exit");
         System.out.println("**************");
